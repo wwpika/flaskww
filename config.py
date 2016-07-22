@@ -8,11 +8,11 @@ class Config:
      MAIL_PORT = 587
      MAIL_USE_TLS = True
      
-     MAIL_USERNAME = os.environ.get('wU')
-     MAIL_PASSWORD ='ekqxfgmelclpggdf'
+     MAIL_USERNAME ='1258086401@qq.com'
+     MAIL_PASSWORD ='exphakhxqzvjibej'
      FLASKY_MAIL_SUBJECT_PREFIX = '[Flasky]'
-     FLASKY_MAIL_SENDER =os.environ.get('wU')
-     FLASKY_ADMIN = os.environ.get('wS')
+     FLASKY_MAIL_SENDER ='1258086401@qq.com'
+     FLASKY_ADMIN = ''
  
      @staticmethod
      def init_app(app):
