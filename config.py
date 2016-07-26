@@ -12,7 +12,7 @@ class Config:
      MAIL_PASSWORD ='exphakhxqzvjibej'
      FLASKY_MAIL_SUBJECT_PREFIX = '[Flasky]'
      FLASKY_MAIL_SENDER ='1258086401@qq.com'
-     FLASKY_ADMIN = ''
+     FLASKY_ADMIN = '3189180698@qq.com'
  
      @staticmethod
      def init_app(app):
