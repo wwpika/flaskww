@@ -3,6 +3,8 @@ from wtforms import StringField, SubmitField,TextAreaField,BooleanField,SelectFi
 from wtforms.validators import Required,Length,Email,Regexp
 from wtforms import ValidationError
 from ..models import Role,User
+from flask_pagedown.fields import PageDownField
+
  
  
 class NameForm(Form):
@@ -44,6 +46,6 @@ class EditProfileAdminForm(Form):
                raise ValidationError('Username already in use.')
           
 class PostForm(Form):
-     body=TextAreaField("write something here...",validators=[Required()])
+     body=PageDownField('Write something here...',validators=[Required()])
      submit=SubmitField('Submit')
      
