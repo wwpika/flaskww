@@ -1,6 +1,6 @@
-import os
+import os    
 from app import create_app, db
-from app.models import User, Role,Permission,Post
+from app.models import User, Role,Permission,Post,Follow,Comment
 from flask_script import Manager, Shell
 from flask_migrate import Migrate, MigrateCommand
 
@@ -11,7 +11,7 @@ migrate = Migrate(app, db)
  
  
 def make_shell_context():
-     return dict(app=app, db=db, User=User, Role=Role,Permission=Permission,Post=Post)
+     return dict(app=app, db=db, User=User, Role=Role,Permission=Permission,Post=Post,Follow=Follow,Comment=Comment)
 manager.add_command("shell", Shell(make_context=make_shell_context))
 manager.add_command('db', MigrateCommand)
 
@@ -20,16 +20,10 @@ manager.add_command('db', MigrateCommand)
      
 @manager.command
 def test_password():
+    
      import unittest
-     
-     suite=unittest.TestLoader().discover('tests')
-     unittest.TextTestRunner(verbosity=2).run(suite)
-     '''
-     suite = unittest.TestLoader().loadTestsFromTestCase(UserModelTestCase)
-     unittest.TextTestRunner(verbosity=2).run(suite)
-     '''
- 
-
-  
+     tests=unittest.TestLoader().discover('tests')
+     unittest.TextTestResult(verbosity=2).run(tests)
+            
 if __name__ == '__main__':
      manager.run()

@@ -49,3 +49,7 @@ class PostForm(Form):
      body=PageDownField('Write something here...',validators=[Required()])
      submit=SubmitField('Submit')
      
+class CommentForm(Form):
+     body=StringField('Enter your comment',validators=[Required()])
+     submit=SubmitField('Submit')
+     
