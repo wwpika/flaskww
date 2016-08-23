@@ -23,7 +23,8 @@ class UserModelTestCase(unittest.TestCase):
         
     def test_app_is_testing(self):
         self.assertTrue(current_app.config['TESTING'])
-        
+
+'''        
     def test_roles_and_permissions(self):
         u=User(email='john@example.com',password='cat')
         self.assertTrue(u.can(Permission.WRITE_ARTICLES))
@@ -87,7 +88,7 @@ class UserModelTestCase(unittest.TestCase):
         db.session.commit()
         self.assertTrue(Follow.query.count()==1)
         
-'''      
+     
     def test_password_setter(self):
         u=User(password='cat')
         self.assertTrue(u.password_hash is not None)
